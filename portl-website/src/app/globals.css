@@ -1,0 +1,40 @@
+@import "tailwindcss";
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: #07030d;
+}
+
+@keyframes portalGlow {
+  0% {
+    transform: translate(-10%, -10%) scale(1);
+    opacity: 0.45;
+  }
+
+  50% {
+    transform: translate(10%, 8%) scale(1.15);
+    opacity: 0.75;
+  }
+
+  100% {
+    transform: translate(-10%, -10%) scale(1);
+    opacity: 0.45;
+  }
+}
+
+@keyframes portalFloat {
+  0% {
+    transform: translateY(0px) rotate(0deg);
+  }
+
+  50% {
+    transform: translateY(-18px) rotate(2deg);
+  }
+
+  100% {
+    transform: translateY(0px) rotate(0deg);
+  }
+}
