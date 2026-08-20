@@ -22,12 +22,6 @@ export default function Home() {
             <a href="#contact" className="hover:text-white">Contact</a>
           </div>
 
-          <a
-            href="/Portal-Setup.exe"
-            className="rounded-xl bg-purple-500 px-5 py-2 font-semibold text-white shadow-lg shadow-purple-500/25 hover:bg-purple-400"
-          >
-            Download
-          </a>
         </div>
       </nav>
 
@@ -40,10 +34,6 @@ export default function Home() {
           className="mb-8 animate-[portalFloat_5s_ease-in-out_infinite] drop-shadow-[0_0_35px_rgba(168,85,247,0.8)]"
         />
 
-        <div className="mb-6 rounded-full border border-purple-400/30 bg-purple-500/10 px-4 py-2 text-sm text-purple-200">
-          Windows AI Desktop Widget
-        </div>
-
         <h1 className="max-w-5xl text-5xl font-bold tracking-tight md:text-7xl">
           Your AI chats, one click away.
         </h1>
@@ -55,10 +45,10 @@ export default function Home() {
 
         <div className="mt-8 flex flex-col gap-4 sm:flex-row">
           <a
-            href="/Portal-Setup.exe"
+            href="/download"
             className="rounded-xl bg-purple-500 px-8 py-4 font-semibold text-white shadow-xl shadow-purple-500/30 hover:bg-purple-400"
           >
-            Download for Windows
+            Download
           </a>
 
           <a
@@ -82,7 +72,7 @@ export default function Home() {
             ["Corner Lock", "Lock Portal to a corner or let it free roam."],
             ["Clean Animations", "Smooth opening, closing, and tab movement."],
             ["Local Logins", "Sign in directly through the official AI websites."],
-            ["Windows First", "Designed for a clean Windows desktop experience."],
+            ["Windows & Mac", "Built for a clean desktop experience on Windows and macOS."],
           ].map(([title, desc]) => (
             <div
               key={title}
@@ -108,11 +98,11 @@ export default function Home() {
           </FAQ>
 
           <FAQ question="Is Portal free?">
-            Portal is a completely free open source applicaiton.
+            Portal is a completely free open source application.
           </FAQ>
 
           <FAQ question="Does Portal work on Mac?">
-            Portal is Windows-first. Mac support may come later.
+            Yes. Portal is available for both Windows and macOS.
           </FAQ>
         </div>
       </section>
@@ -121,35 +111,15 @@ export default function Home() {
         <h2 className="text-4xl font-bold">Contact us</h2>
 
         <p className="mt-4 text-white/60">
-          Have questions, feedback, or bugs to report? Send us an email.
+          Have questions, feedback, or bugs to report?
         </p>
 
-        <form
-          action="mailto:YOUR_GMAIL_HERE@gmail.com"
-          method="post"
-          encType="text/plain"
-          className="mt-8 space-y-4 text-left"
+        <a
+          href="mailto:useprtl@gmail.com"
+          className="mt-6 inline-block text-lg font-semibold text-purple-300 transition hover:text-purple-200"
         >
-          <input
-            name="email"
-            placeholder="Your email"
-            className="w-full rounded-xl border border-purple-400/20 bg-white/[0.04] px-4 py-3 text-white outline-none placeholder:text-white/35"
-          />
-
-          <textarea
-            name="message"
-            placeholder="Your message"
-            rows={5}
-            className="w-full rounded-xl border border-purple-400/20 bg-white/[0.04] px-4 py-3 text-white outline-none placeholder:text-white/35"
-          />
-
-          <button
-            type="submit"
-            className="w-full rounded-xl bg-purple-500 px-6 py-3 font-semibold text-white hover:bg-purple-400"
-          >
-            Send Email
-          </button>
-        </form>
+          useprtl@gmail.com
+        </a>
       </section>
 
       <footer className="relative z-10 border-t border-purple-500/20 py-8 text-center text-white/40">
