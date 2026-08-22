@@ -21,7 +21,7 @@ export default function DownloadPage() {
 
         <div className="mt-10 grid gap-5 sm:grid-cols-2">
           <a
-            href="/Portal-Setup.exe"
+            href="https://github.com/AdamLashnuk/Portal/releases/download/v1.0.0/Portal-Setup.exe"
             className="rounded-2xl border border-purple-400/20 bg-white/[0.04] p-8 transition hover:-translate-y-1 hover:border-purple-400/50 hover:bg-purple-500/10"
           >
             <h2 className="text-2xl font-semibold text-purple-100">Windows</h2>
@@ -32,7 +32,7 @@ export default function DownloadPage() {
           </a>
 
           <a
-            href="/Portal.dmg"
+            href="https://github.com/AdamLashnuk/Portal-MacOS/releases/download/v0.1.0/Portal-macOS-Apple-Silicon.dmg"
             className="rounded-2xl border border-purple-400/20 bg-white/[0.04] p-8 transition hover:-translate-y-1 hover:border-purple-400/50 hover:bg-purple-500/10"
           >
             <h2 className="text-2xl font-semibold text-purple-100">macOS</h2>
