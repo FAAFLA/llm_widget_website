@@ -13,6 +13,7 @@ export default function DownloadPage() {
         >
           ← Back to Portal
         </a>
+
         <h1 className="text-4xl font-bold md:text-6xl">Download Portal</h1>
         <p className="mx-auto mt-4 max-w-xl text-white/60">
           Choose your operating system to get started.
