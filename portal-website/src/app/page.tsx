@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 
 export default function Home() {
   return (
@@ -11,16 +12,16 @@ export default function Home() {
 
       <nav className="fixed left-0 top-0 z-50 w-full border-b border-purple-500/20 bg-[#07030d]/80 backdrop-blur">
         <div className="mx-auto flex max-w-6xl items-center justify-between px-6 py-4">
-          <a href="#" className="flex items-center gap-3">
+          <Link href="/" className="flex items-center gap-3">
             <Image src="/portal-logo.png" alt="Portal logo" width={42} height={42} />
             <span className="text-xl font-bold">Portal</span>
-          </a>
-
-          <div className="hidden gap-6 text-sm text-white/60 md:flex">
-            <a href="#features" className="hover:text-white">Features</a>
-            <a href="#faq" className="hover:text-white">FAQ</a>
-            <a href="#contact" className="hover:text-white">Contact</a>
-          </div>
+          </Link>
+          <Link
+            href="/help"
+            className="text-sm text-white/60 transition hover:text-white"
+          >
+            Help Section
+          </Link>
 
         </div>
       </nav>
@@ -44,23 +45,23 @@ export default function Home() {
         </p>
 
         <div className="mt-8 flex flex-col gap-4 sm:flex-row">
-          <a
+          <Link
             href="/download"
             className="rounded-xl bg-purple-500 px-8 py-4 font-semibold text-white shadow-xl shadow-purple-500/30 hover:bg-purple-400"
           >
             Download
-          </a>
+          </Link>
 
-          <a
-            href="#features"
+          <Link
+            href="/help"
             className="rounded-xl border border-purple-400/30 px-8 py-4 font-semibold text-purple-100 hover:bg-purple-500/10"
           >
-            Learn More
-          </a>
+            Help Section
+          </Link>
         </div>
       </section>
 
-      <section id="features" className="relative z-10 mx-auto max-w-6xl px-6 py-24">
+      <section className="relative z-10 mx-auto max-w-6xl px-6 py-24">
         <h2 className="text-center text-4xl font-bold">
           Built to stay out of your way.
         </h2>
@@ -85,29 +86,7 @@ export default function Home() {
         </div>
       </section>
 
-      <section id="faq" className="relative z-10 mx-auto max-w-4xl px-6 py-24">
-        <h2 className="text-center text-4xl font-bold">FAQ</h2>
-
-        <div className="mt-10 space-y-6">
-          <FAQ question="Does Portal store my AI accounts?">
-            No. You sign in directly through the official AI websites, we will never store your data and information on our servers.
-          </FAQ>
-
-          <FAQ question="Which AI providers work with Portal?">
-            We currently support ChatGPT, Claude, Gemini, Perplexity, DeepSeek, and HuggingFace.
-          </FAQ>
-
-          <FAQ question="Is Portal free?">
-            Portal is a completely free open source application.
-          </FAQ>
-
-          <FAQ question="Does Portal work on Mac?">
-            Yes. Portal is available for both Windows and macOS.
-          </FAQ>
-        </div>
-      </section>
-
-      <section id="contact" className="relative z-10 mx-auto max-w-3xl px-6 py-24 text-center">
+      <section className="relative z-10 mx-auto max-w-3xl px-6 py-24 text-center">
         <h2 className="text-4xl font-bold">Contact us</h2>
 
         <p className="mt-4 text-white/60">
@@ -126,20 +105,5 @@ export default function Home() {
         © 2026 Portal. All rights reserved.
       </footer>
     </main>
-  );
-}
-
-function FAQ({
-  question,
-  children,
-}: {
-  question: string;
-  children: React.ReactNode;
-}) {
-  return (
-    <div className="rounded-2xl border border-purple-400/20 bg-white/[0.04] p-6">
-      <h3 className="font-semibold text-purple-100">{question}</h3>
-      <p className="mt-2 text-white/60">{children}</p>
-    </div>
   );
 }
