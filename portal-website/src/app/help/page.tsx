@@ -1,110 +1,62 @@
-import Image from "next/image";
+import type { Metadata } from "next";
 import Link from "next/link";
 
-export default function Home() {
+export const metadata: Metadata = {
+  title: "Help | Portal",
+  description: "Setup and troubleshooting guides for Portal on macOS and Windows.",
+};
+
+const guides = [
+  {
+    title: "macOS Help Guide",
+    description:
+      "Add your macOS installation, setup, and troubleshooting instructions here.",
+  },
+  {
+    title: "Windows Help Guide",
+    description:
+      "Add your Windows installation, setup, and troubleshooting instructions here.",
+  },
+];
+
+export default function HelpPage() {
   return (
-    <main className="relative min-h-screen overflow-hidden bg-[#07030d] text-white">
-      <div className="pointer-events-none fixed inset-0 z-0 overflow-hidden">
-        <div className="absolute left-[-10%] top-[-10%] h-[420px] w-[420px] rounded-full bg-purple-600/30 blur-[120px] animate-[portalGlow_9s_ease-in-out_infinite]" />
-        <div className="absolute bottom-[-10%] right-[-10%] h-[500px] w-[500px] rounded-full bg-fuchsia-500/20 blur-[140px] animate-[portalGlow_12s_ease-in-out_infinite]" />
-        <div className="absolute left-[45%] top-[30%] h-[300px] w-[300px] rounded-full bg-violet-500/10 blur-[100px] animate-[portalGlow_15s_ease-in-out_infinite]" />
+    <main className="relative min-h-screen overflow-hidden bg-[#07030d] px-6 py-24 text-white">
+      <div className="pointer-events-none fixed inset-0 overflow-hidden">
+        <div className="absolute left-[-10%] top-[-10%] h-[420px] w-[420px] rounded-full bg-purple-600/30 blur-[120px]" />
+        <div className="absolute bottom-[-10%] right-[-10%] h-[500px] w-[500px] rounded-full bg-fuchsia-500/20 blur-[140px]" />
       </div>
 
-      <nav className="fixed left-0 top-0 z-50 w-full border-b border-purple-500/20 bg-[#07030d]/80 backdrop-blur">
-        <div className="mx-auto flex max-w-6xl items-center justify-between px-6 py-4">
-          <Link href="/" className="flex items-center gap-3">
-            <Image src="/portal-logo.png" alt="Portal logo" width={42} height={42} />
-            <span className="text-xl font-bold">Portal</span>
-          </Link>
+      <section className="relative z-10 mx-auto w-full max-w-4xl text-center">
+        <Link
+          href="/"
+          className="mb-10 inline-block text-sm text-white/50 transition hover:text-white"
+        >
+          ← Back to Portal
+        </Link>
 
-          <Link
-            href="/help"
-            className="text-sm text-white/60 transition hover:text-white"
-          >
-            Help Section
-          </Link>
-
-        </div>
-      </nav>
-
-      <section className="relative z-10 mx-auto flex min-h-screen max-w-6xl flex-col items-center justify-center px-6 pt-24 text-center">
-        <Image
-          src="/portal-logo.png"
-          alt="Portal logo"
-          width={160}
-          height={160}
-          className="mb-8 animate-[portalFloat_5s_ease-in-out_infinite] drop-shadow-[0_0_35px_rgba(168,85,247,0.8)]"
-        />
-
-        <h1 className="max-w-5xl text-5xl font-bold tracking-tight md:text-7xl">
-          Your AI chats, one click away.
-        </h1>
-
-        <p className="mt-6 max-w-2xl text-lg text-white/60">
-          Portal is a clean floating desktop widget that lets you open ChatGPT,
-          Claude, Gemini, and more without filling your browser with tabs.
+        <h1 className="text-4xl font-bold md:text-6xl">Help Section</h1>
+        <p className="mx-auto mt-4 max-w-xl text-white/60">
+          Choose your operating system to find Portal setup and troubleshooting help.
         </p>
 
-        <div className="mt-8 flex flex-col gap-4 sm:flex-row">
-          <Link
-            href="/download"
-            className="rounded-xl bg-purple-500 px-8 py-4 font-semibold text-white shadow-xl shadow-purple-500/30 hover:bg-purple-400"
-          >
-            Download
-          </Link>
-
-          <Link
-            href="/help"
-            className="rounded-xl border border-purple-400/30 px-8 py-4 font-semibold text-purple-100 hover:bg-purple-500/10"
-          >
-            Help Section
-          </Link>
-        </div>
-      </section>
-
-      <section className="relative z-10 mx-auto max-w-6xl px-6 py-24">
-        <h2 className="text-center text-4xl font-bold">
-          Built to stay out of your way.
-        </h2>
-
-        <div className="mt-12 grid gap-6 md:grid-cols-3">
-          {[
-            ["Floating Widget", "Keep your favorite AI tools one click away."],
-            ["Multiple LLMs", "Use ChatGPT, Claude, Gemini, etc"],
-            ["Corner Lock", "Lock Portal to a corner or let it free roam."],
-            ["Clean Animations", "Smooth opening, closing, and tab movement."],
-            ["Local Logins", "Sign in directly through the official AI websites."],
-            ["Windows & Mac", "Built for a clean desktop experience on Windows and macOS."],
-          ].map(([title, desc]) => (
-            <div
-              key={title}
-              className="rounded-2xl border border-purple-400/20 bg-white/[0.04] p-6 transition hover:-translate-y-1 hover:border-purple-400/40 hover:bg-purple-500/10"
+        <div className="mt-10 grid gap-5 md:grid-cols-2">
+          {guides.map((guide) => (
+            <article
+              key={guide.title}
+              className="rounded-2xl border border-purple-400/20 bg-white/[0.04] p-8 text-left"
             >
-              <h3 className="text-xl font-semibold text-purple-100">{title}</h3>
-              <p className="mt-3 text-white/55">{desc}</p>
-            </div>
+              <h2 className="text-2xl font-semibold text-purple-100">
+                {guide.title}
+              </h2>
+              <p className="mt-3 text-white/55">{guide.description}</p>
+              <div className="mt-8 rounded-xl border border-dashed border-purple-400/30 bg-purple-500/[0.06] px-5 py-8 text-center text-sm text-purple-200/70">
+                Guide content coming soon
+              </div>
+            </article>
           ))}
         </div>
       </section>
-
-      <section className="relative z-10 mx-auto max-w-3xl px-6 py-24 text-center">
-        <h2 className="text-4xl font-bold">Contact us</h2>
-
-        <p className="mt-4 text-white/60">
-          Have questions, feedback, or bugs to report?
-        </p>
-
-        <a
-          href="mailto:useprtl@gmail.com"
-          className="mt-6 inline-block text-lg font-semibold text-purple-300 transition hover:text-purple-200"
-        >
-          useprtl@gmail.com
-        </a>
-      </section>
-
-      <footer className="relative z-10 border-t border-purple-500/20 py-8 text-center text-white/40">
-        © 2026 Portal. All rights reserved.
-      </footer>
     </main>
   );
 }
