@@ -18,6 +18,7 @@ export default function DownloadPage() {
         <p className="mx-auto mt-4 max-w-xl text-white/60">
           Choose your operating system to get started.
         </p>
+
         <div className="mt-10 grid gap-5 sm:grid-cols-2">
           <a
             href="https://github.com/AdamLashnuk/Portal/releases/download/v1.0.0/Portal-Setup.exe"
