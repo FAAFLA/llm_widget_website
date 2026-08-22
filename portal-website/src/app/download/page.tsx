@@ -1,3 +1,5 @@
+import Link from "next/link";
+
 export default function DownloadPage() {
   return (
     <main className="relative flex min-h-screen items-center justify-center overflow-hidden bg-[#07030d] px-6 py-24 text-white">
@@ -7,12 +9,12 @@ export default function DownloadPage() {
       </div>
 
       <section className="relative z-10 w-full max-w-3xl text-center">
-        <a
+        <Link
           href="/"
           className="mb-10 inline-block text-sm text-white/50 transition hover:text-white"
         >
           ← Back to Portal
-        </a>
+        </Link>
 
         <h1 className="text-4xl font-bold md:text-6xl">Download Portal</h1>
         <p className="mx-auto mt-4 max-w-xl text-white/60">
